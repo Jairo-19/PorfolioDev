@@ -1,0 +1,296 @@
+---
+---
+
+<section id="conoceme" class="py-20 px-6 md:px-20">
+
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-14" style="font-family: 'Playfair Display', serif">
+    <span class="text-[#cc0247]">Conóceme</span> un poco más
+  </h2>
+
+  <!-- Tablón de corcho -->
+  <div class="corcho relative mx-auto max-w-4xl min-h-[420px] rounded-2xl p-10 flex items-center justify-center shadow-2xl">
+
+    <!-- Marco de madera -->
+    <div class="marco-madera absolute inset-0 rounded-2xl pointer-events-none"></div>
+
+    <!-- NOTA INICIAL -->
+    <div id="nota-inicial" class="nota-inicial cursor-pointer select-none">
+      <!-- Chincheta -->
+      <div class="chincheta"></div>
+      <p class="nota-texto text-gray-800 font-semibold text-center leading-relaxed px-2">
+        ¡Psst... pincha aquí<br>para conocerme<br>un poco más! 👀
+      </p>
+    </div>
+
+    <!-- NOTAS REVELADAS (ocultas al inicio) -->
+    <div id="notas-reveladas" class="notas-grid hidden w-full">
+
+      <!-- Nota 1 — amarilla -->
+      <div class="nota nota-amarilla nota-drop-1">
+        <div class="chincheta"></div>
+        <p class="nota-titulo">🛠️ Mi stack (la verdad)</p>
+        <p class="nota-cuerpo">
+          Tengo muchas tecnologías en el stack, y sería mentira decir que las domino todas.
+          He ido tocando de todo buscando qué me gustaba más. Eso me ha dado una visión
+          amplia... y me ha enseñado que no hace falta saberlo todo: hace falta saber
+          qué quieres aprender bien.
+        </p>
+      </div>
+
+      <!-- Nota 2 — verde -->
+      <div class="nota nota-verde nota-drop-2">
+        <div class="chincheta chincheta-verde"></div>
+        <p class="nota-titulo">🎨 Donde me siento fuerte</p>
+        <p class="nota-cuerpo">
+          El frontend es donde realmente disfruto. Puedo pasar horas ajustando un
+          espaciado o eligiendo una tipografía porque me importa lo que el usuario
+          ve y siente. En backend me defiendo con Laravel y PHP, aunque aún me queda
+          recorrido. Me gusta el trabajo limpio más que el trabajo rápido.
+        </p>
+      </div>
+
+      <!-- Nota 3 — rosa -->
+      <div class="nota nota-rosa nota-drop-3">
+        <div class="chincheta chincheta-rosa"></div>
+        <p class="nota-titulo">📋 Lo que no está en el CV</p>
+        <p class="nota-cuerpo">
+          Tengo 19 años, estoy terminando DAW y soy consciente de que aún me falta
+          camino. Pero me tomo en serio lo que hago, busco feedback y no me da miedo
+          reconocer cuando algo no lo entiendo. Prefiero ser honesto sobre mis límites
+          que vender humo.
+        </p>
+      </div>
+
+      <!-- Nota 4 — azul -->
+      <div class="nota nota-azul nota-drop-4">
+        <div class="chincheta chincheta-azul"></div>
+        <p class="nota-titulo">🤖 La IA y yo</p>
+        <p class="nota-cuerpo">
+          Estoy hecho un lío, y no me avergüenza decirlo. Sé que es una herramienta
+          brutalmente potente — gracias a ella soy capaz de desarrollar cosas que nunca
+          habría imaginado, como muchos de los efectos que ves en mis proyectos. Pero
+          sigo buscando el equilibrio entre lo que hace la IA y lo que hago yo.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  /* ── TEXTURA DE CORCHO ── */
+  .corcho {
+    background-color: #c8973f;
+    background-image:
+      radial-gradient(ellipse 3px 2px at 12% 20%, rgba(255,255,255,0.07) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 3px at 55% 70%, rgba(0,0,0,0.10) 0%, transparent 100%),
+      radial-gradient(ellipse 4px 2px at 80% 15%, rgba(255,255,255,0.06) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 4px at 30% 85%, rgba(0,0,0,0.08) 0%, transparent 100%),
+      radial-gradient(ellipse 3px 3px at 65% 40%, rgba(255,255,255,0.05) 0%, transparent 100%),
+      repeating-linear-gradient(
+        17deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.04) 3px,
+        rgba(0,0,0,0.04) 4px
+      ),
+      repeating-linear-gradient(
+        107deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(0,0,0,0.03) 5px,
+        rgba(0,0,0,0.03) 6px
+      );
+    background-size: 80px 80px, 60px 60px, 100px 100px, 70px 70px, 90px 90px, 8px 8px, 10px 10px;
+  }
+
+  /* ── MARCO DE MADERA ── */
+  .marco-madera {
+    box-shadow:
+      inset 0 0 0 10px #8b5e2a,
+      inset 0 0 0 13px #a0722a,
+      0 8px 32px rgba(0,0,0,0.35);
+    border-radius: 16px;
+  }
+
+  /* ── CHINCHETA BASE ── */
+  .chincheta {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ff6b6b, #cc0000);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.3);
+    z-index: 10;
+  }
+  .chincheta::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: #888;
+    border-radius: 0 0 3px 3px;
+  }
+  .chincheta-verde {
+    background: radial-gradient(circle at 35% 35%, #6bcf7f, #2d9e47);
+  }
+  .chincheta-rosa {
+    background: radial-gradient(circle at 35% 35%, #f9a8d4, #ec4899);
+  }
+  .chincheta-azul {
+    background: radial-gradient(circle at 35% 35%, #93c5fd, #2563eb);
+  }
+
+  /* ── NOTA INICIAL ── */
+  .nota-inicial {
+    position: relative;
+    background: #fef08a;
+    width: 200px;
+    padding: 28px 20px 22px;
+    border-radius: 4px 4px 6px 6px;
+    transform: rotate(-2deg);
+    box-shadow:
+      3px 3px 0 #e6c830,
+      6px 6px 16px rgba(0,0,0,0.25),
+      0 1px 0 rgba(255,255,255,0.5) inset;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .nota-inicial:hover {
+    transform: rotate(-1deg) scale(1.05);
+    box-shadow:
+      3px 3px 0 #e6c830,
+      8px 10px 24px rgba(0,0,0,0.35),
+      0 1px 0 rgba(255,255,255,0.5) inset;
+  }
+  .nota-texto {
+    font-size: 0.95rem;
+    font-family: 'Playwrite NO', cursive, sans-serif;
+    line-height: 1.5;
+  }
+
+  /* ── ANIMACIÓN SALIDA NOTA INICIAL ── */
+  @keyframes notaOut {
+    0%   { opacity: 1; transform: rotate(-2deg) scale(1); }
+    40%  { opacity: 0.5; transform: rotate(3deg) scale(0.85); }
+    100% { opacity: 0; transform: rotate(-5deg) scale(0.5) translateY(20px); }
+  }
+  .nota-inicial.anim-out {
+    animation: notaOut 0.35s ease-in forwards;
+    pointer-events: none;
+  }
+
+  /* ── GRID DE NOTAS REVELADAS ── */
+  .notas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+  .notas-grid.hidden { display: none; }
+
+  @media (max-width: 640px) {
+    .notas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── NOTAS BASE ── */
+  .nota {
+    position: relative;
+    padding: 28px 18px 20px;
+    border-radius: 3px 3px 5px 5px;
+    box-shadow:
+      2px 2px 0 rgba(0,0,0,0.15),
+      5px 8px 20px rgba(0,0,0,0.25),
+      0 1px 0 rgba(255,255,255,0.4) inset;
+  }
+  .nota-amarilla {
+    background: #fef08a;
+    box-shadow: 2px 2px 0 #d4c020, 5px 8px 20px rgba(0,0,0,0.25);
+    transform: rotate(-1.5deg);
+  }
+  .nota-verde {
+    background: #bbf7d0;
+    box-shadow: 2px 2px 0 #74c993, 5px 8px 20px rgba(0,0,0,0.25);
+    transform: rotate(1deg);
+  }
+  .nota-rosa {
+    background: #fbcfe8;
+    box-shadow: 2px 2px 0 #e879a8, 5px 8px 20px rgba(0,0,0,0.25);
+    transform: rotate(-0.8deg);
+  }
+  .nota-azul {
+    background: #bae6fd;
+    box-shadow: 2px 2px 0 #38bdf8, 5px 8px 20px rgba(0,0,0,0.25);
+    transform: rotate(1.2deg);
+  }
+  .nota-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-family: 'Playwrite NO', cursive, sans-serif;
+  }
+  .nota-cuerpo {
+    font-size: 0.82rem;
+    color: #374151;
+    line-height: 1.6;
+  }
+
+  /* ── ANIMACIÓN CAÍDA CLAVADA ── */
+  @keyframes dropPin1 {
+    0%   { opacity: 0; transform: rotate(-1.5deg) translateY(-140px); }
+    70%  { opacity: 1; transform: rotate(-1.5deg) translateY(6px); }
+    85%  { transform: rotate(-1.5deg) translateY(-3px); }
+    100% { transform: rotate(-1.5deg) translateY(0px); }
+  }
+  @keyframes dropPin2 {
+    0%   { opacity: 0; transform: rotate(1deg) translateY(-140px); }
+    70%  { opacity: 1; transform: rotate(1deg) translateY(6px); }
+    85%  { transform: rotate(1deg) translateY(-3px); }
+    100% { transform: rotate(1deg) translateY(0px); }
+  }
+  @keyframes dropPin3 {
+    0%   { opacity: 0; transform: rotate(-0.8deg) translateY(-140px); }
+    70%  { opacity: 1; transform: rotate(-0.8deg) translateY(6px); }
+    85%  { transform: rotate(-0.8deg) translateY(-3px); }
+    100% { transform: rotate(-0.8deg) translateY(0px); }
+  }
+
+  @keyframes dropPin4 {
+    0%   { opacity: 0; transform: rotate(1.2deg) translateY(-140px); }
+    70%  { opacity: 1; transform: rotate(1.2deg) translateY(6px); }
+    85%  { transform: rotate(1.2deg) translateY(-3px); }
+    100% { transform: rotate(1.2deg) translateY(0px); }
+  }
+
+  .nota-drop-1 { animation: dropPin1 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0s    both; }
+  .nota-drop-2 { animation: dropPin2 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+  .nota-drop-3 { animation: dropPin3 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both; }
+  .nota-drop-4 { animation: dropPin4 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
+
+  /* Cuando están ocultas no animan */
+  .notas-grid.hidden .nota { animation: none; }
+</style>
+
+<script>
+  const notaInicial   = document.getElementById('nota-inicial')!;
+  const notasReveladas = document.getElementById('notas-reveladas')!;
+
+  notaInicial.addEventListener('click', () => {
+    notaInicial.classList.add('anim-out');
+
+    setTimeout(() => {
+      notaInicial.style.display = 'none';
+      notasReveladas.classList.remove('hidden');
+    }, 320);
+  });
+</script>
