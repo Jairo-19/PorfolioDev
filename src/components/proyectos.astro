@@ -18,8 +18,22 @@ const proyectos = [
     nombre: "PelisMax",
     imagen: "/PelisMax.png",
     descripcion: "Plataforma de películas desarrollada para dominar tecnologías modernas. Consume una API externa, implementa búsqueda avanzada, filtros dinámicos y detalle de cada película con arquitectura escalable.",
-    tecnologias: ["HTML", "Tailwind CSS", "TypeScript", "Vite", "Express"],
+    tecnologias: ["HTML", "Tailwind CSS", "TypeScript", "Vite", "Express", "React"],
     github: "https://github.com/Jairo-19/PelisMax",
+  },
+  {
+    nombre: "Artesania Ramos",
+    imagen: "/ArtesaniaRamos.png",
+    descripcion: "Tienda simple creada para aprender a desplegar con Next.js y Neon (PostgreSQL) en Vercel. Implementa funcionalidades de CRUDs básicos.",
+    tecnologias: ["Next.js", "React", "TypeScript", "Neon", "Vercel"],
+    url: "https://artesania-ramos.vercel.app/",
+  },
+  {
+    nombre: "Librería Verso & Tinta",
+    imagen: "/Libreria.png",
+    descripcion: "Proyecto desarrollado para repasar y afianzar conocimientos de Laravel, PHP y el consumo de APIs externas.",
+    tecnologias: ["Laravel", "PHP", "HTML", "Tailwind CSS",],
+    github: "https://github.com/Jairo-19/Libreria/tree/main",
   },
 ];
 
@@ -35,6 +49,7 @@ const iconosBase: Record<string, string> = {
   "MySQL":        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   "Python":       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   "Next.js":      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  "Vercel":       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
   "Sass":         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
   "Vite":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
   "Express":      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
@@ -52,7 +67,7 @@ const iconosBase: Record<string, string> = {
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {proyectos.map((proyecto, i) => (
       <a
-        href={proyecto.github}
+        href={proyecto.url ?? proyecto.github}
         target="_blank"
         rel="noopener noreferrer"
         class={`scroll-hidden scroll-delay-${i + 1} tilt-card group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col`}
@@ -95,9 +110,9 @@ const iconosBase: Record<string, string> = {
                 </span>
               )
             )}
-            <!-- Enlace a GitHub -->
+            <!-- Enlace -->
             <span class="ml-auto text-xs text-[#cc0247] font-medium group-hover:underline">
-              Ver en GitHub →
+              {proyecto.url ? "Ver proyecto →" : "Ver en GitHub →"}
             </span>
           </div>
         </div>
